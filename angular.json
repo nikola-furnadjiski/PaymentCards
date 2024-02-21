@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "payment-cards:build:production"
+              "buildTarget": "payment-cards:build:production"
             },
             "development": {
-              "browserTarget": "payment-cards:build:development"
+              "buildTarget": "payment-cards:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "payment-cards:build"
+            "buildTarget": "payment-cards:build"
           }
         },
         "test": {
