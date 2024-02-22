@@ -1,0 +1,13 @@
+<div class="card-list-wrapper">
+    <div class="top-section">
+        <h1 class="title">Your cards</h1>
+        <p class="text">Add, edit or delete your cards any time</p>
+    </div>
+
+    <div *ngFor="let card of cards" class="card-item">
+        <app-card [card]="card"></app-card>
+    </div>
+
+    <button class="add-card-button" (click)="onAddCard()">Add new card</button>
+    <app-add-card></app-add-card>
+</div>

@@ -1,0 +1,41 @@
+<div class="card-wrapper">
+    <div class="overlay"
+         [class.background-visa]="card.type === CardTypes.Visa"
+         [class.background-mc]="card.type === CardTypes.Mastercard"
+    >
+        <div class="card">
+            <div class="top-row">
+                <img class="logo-image" [src]=imageUrl [alt]=altText>
+                <div class="top-row__right">
+                    <div>
+                        <div class="cvc bold small"
+                             [class.color-visa]="card.type === CardTypes.Visa"
+                             [class.color-mc]="card.type === CardTypes.Mastercard">
+                            CVC
+                        </div>
+                        <div class="white medium">{{ card.cvc }}</div>
+                    </div>
+                    <div>
+                        <div class="bold small"
+                             [class.color-visa]="card.type === CardTypes.Visa"
+                             [class.color-mc]="card.type === CardTypes.Mastercard">
+                            EXPIRES
+                        </div>
+                        <div class="white medium">{{ card.expires | formatDate }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-row">
+                <div class="white medium name">{{ card.name }}</div>
+                <div class="bottom-row__right">
+                    <div class="medium preserve-tab"
+                         [class.color-visa]="card.type === CardTypes.Visa"
+                         [class.color-mc]="card.type === CardTypes.Mastercard">
+                        {{ card.cardNumber | tabSplit }}
+                    </div>
+                    <div class="edit-image" (click)="onEditCard()"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
