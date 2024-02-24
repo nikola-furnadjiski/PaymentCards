@@ -1,7 +1,7 @@
 
 .card-wrapper {
-  width: 425px;
-  height: 300px;
+  width: 400px;
+  height: 240px;
   border-radius: 16px;
   background: url('~src/assets/images/card-background-shape.svg');
   background-size: cover;
@@ -26,7 +26,7 @@
 
 .card {
   padding: 34px 24px;
-  height: 77%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

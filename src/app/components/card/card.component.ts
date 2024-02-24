@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Card } from '../../models/card.model';
 import { CardsService } from '../../services/cards.service';
 import { CardTypes } from '../../enums/card-types.enum';
@@ -10,6 +10,9 @@ import { CardTypes } from '../../enums/card-types.enum';
 })
 export class CardComponent implements OnInit {
   @Input() card: Card;
+  @Input() showEditButton: boolean = true;
+
+  @Output() editCard= new EventEmitter<Card>();
 
   protected readonly CardTypes = CardTypes;
 
@@ -25,16 +28,6 @@ export class CardComponent implements OnInit {
   }
 
   onEditCard() {
-    console.log('Edit card clicked!');
-    const cardToEdit: Card = {
-      name: 'Toso Malero',
-      cardNumber: '1111222233334444',
-      cvc: '111',
-      expires: new Date(2029, 8),
-      type: CardTypes.Mastercard
-    }
-    this.cardsService.editCard(cardToEdit).subscribe(result => {
-      console.log(result);
-    });
+    this.editCard.emit(this.card);
   }
 }

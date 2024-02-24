@@ -4,7 +4,7 @@ export interface Card {
     id?: string;
     type: CardTypes;
     name: string;
-    cvc: string;
-    expires: Date;
     cardNumber: string;
+    expires: Date;
+    cvc: string;
 }

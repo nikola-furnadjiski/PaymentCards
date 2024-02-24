@@ -33,7 +33,7 @@
                          [class.color-mc]="card.type === CardTypes.Mastercard">
                         {{ card.cardNumber | tabSplit }}
                     </div>
-                    <div class="edit-image" (click)="onEditCard()"></div>
+                    <div *ngIf="showEditButton" class="edit-image" (click)="onEditCard()"></div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,127 @@
+<div class="fixed left-0 top-0 bg-black bg-opacity-50 w-screen h-screen flex justify-center items-center">
+    <div class="bg-white rounded-3xl shadow-md p-8 w-[50%]">
+
+        <div class="close-button" (click)="onCloseModal()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                 stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+            </svg>
+        </div>
+
+        <div class="title">
+            <ng-container *ngIf="modalType === ModalTypes.Add">Add your card details</ng-container>
+            <ng-container *ngIf="modalType === ModalTypes.Edit">Edit your card</ng-container>
+        </div>
+
+        <div *ngIf="modalType === ModalTypes.Edit" class="card-wrapper">
+            <app-card [card]="cardToEdit!" [showEditButton]=false></app-card>
+        </div>
+
+        <form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+            <div class="grid grid-cols-1 gap-6">
+                <label for="nameOnCard" class="block">
+                    <span class="text-black font-bold">Name in card</span>
+                    <div class="relative">
+                        <input id="nameOnCard"
+                               type="text"
+                               formControlName="nameOnCard"
+                               placeholder="John Doe"
+                               class="mt-0 block w-full px-0.5 border-0 border-b-2 focus:ring-0 focus:border-gray-400 placeholder-gray-300
+                                {{ cardForm.get('nameOnCard')?.errors && cardForm.get('nameOnCard')?.touched ? 'border-red-500' :
+                                !cardForm.get('nameOnCard')?.errors && cardForm.get('nameOnCard')?.touched ? 'border-green-600' : 'border-gray-200' }}"
+                        >
+                        <img *ngIf="cardForm.get('nameOnCard')?.errors && cardForm.get('nameOnCard')?.touched"
+                             src="assets/images/form-error.svg" alt="error icon"
+                            class="status-icon">
+                        <img *ngIf="!cardForm.get('nameOnCard')?.errors && cardForm.get('nameOnCard')?.touched"
+                             src="assets/images/form-success.svg" alt="error icon"
+                             class="status-icon">
+                    </div>
+                    <div *ngIf="cardForm.get('nameOnCard')?.touched && cardForm.get('nameOnCard')?.errors"
+                         class="text-red-500">
+                        <div class="pt-1">Please fill in your name</div>
+                    </div>
+                </label>
+                <label for="cardNumber" class="block">
+                    <span class="text-black font-bold">Card number</span>
+                    <div class="relative">
+                        <input id="cardNumber"
+                               type="text"
+                               formControlName="cardNumber"
+                               placeholder="0000000000000000"
+                                class="mt-0 block w-full px-0.5 border-0 border-b-2 focus:ring-0 focus:border-gray-400 placeholder-gray-300
+                                {{cardForm.get('cardNumber')?.errors && cardForm.get('cardNumber')?.touched ? 'border-red-500' :
+                                 !cardForm.get('cardNumber')?.errors && cardForm.get('cardNumber')?.touched ? 'border-green-600' : 'border-gray-200'
+                                }}"
+                        >
+                        <img *ngIf="cardForm.get('cardNumber')?.errors && cardForm.get('cardNumber')?.touched"
+                             src="assets/images/form-error.svg" alt="error icon"
+                             class="status-icon">
+                        <img *ngIf="!cardForm.get('cardNumber')?.errors && cardForm.get('cardNumber')?.touched"
+                             src="assets/images/form-success.svg" alt="error icon"
+                             class="status-icon">
+                    </div>
+                    <div *ngIf="cardForm.get('cardNumber')?.touched && cardForm.get('cardNumber')?.errors"
+                         class="text-red-500">
+                        <div class="pt-1">Please enter a valid credit card number</div>
+                    </div>
+                </label>
+
+                <label for="expiryDate" class="block">
+                    <span class="text-black font-bold">Expiry date</span>
+                    <div class="relative">
+                    <input id="expiryDate"
+                            type="text"
+                           formControlName="expiryDate"
+                           placeholder="00/00"
+                           class="mt-0 block w-full px-0.5 border-0 border-b-2 focus:ring-0 focus:border-gray-400 placeholder-gray-300
+                                {{cardForm.get('expiryDate')?.errors && cardForm.get('expiryDate')?.touched ? 'border-red-500' :
+                                 !cardForm.get('expiryDate')?.errors && cardForm.get('expiryDate')?.touched ? 'border-green-600' : 'border-gray-200'
+                                }}"
+                    >
+                        <img *ngIf="cardForm.get('expiryDate')?.errors && cardForm.get('expiryDate')?.touched"
+                             src="assets/images/form-error.svg" alt="error icon"
+                             class="status-icon">
+                        <img *ngIf="!cardForm.get('expiryDate')?.errors && cardForm.get('expiryDate')?.touched"
+                             src="assets/images/form-success.svg" alt="error icon"
+                             class="status-icon">
+                    </div>
+                    <div *ngIf="cardForm.get('expiryDate')?.touched && cardForm.get('expiryDate')?.errors"
+                         class="text-red-500">
+                        <div class="pt-1">Please enter a valid expiry date</div>
+                    </div>
+                </label>
+                <label for="cvc" class="block">
+                    <span class="text-black">CVC (Security code)</span>
+                    <div class="relative">
+                    <input id="cvc"
+                           type="text"
+                           formControlName="cvc"
+                           placeholder="000"
+                           class="mt-0 block w-full px-0.5 border-0 border-b-2 focus:ring-0 focus:border-gray-400 placeholder-gray-300
+                                {{cardForm.get('cvc')?.errors && cardForm.get('cvc')?.touched ? 'border-red-500' :
+                                 !cardForm.get('cvc')?.errors && cardForm.get('cvc')?.touched ? 'border-green-600' : 'border-gray-200'
+                                }}"
+                    >
+                        <img *ngIf="cardForm.get('cvc')?.errors && cardForm.get('cvc')?.touched"
+                             src="assets/images/form-error.svg" alt="error icon"
+                             class="status-icon">
+                        <img *ngIf="!cardForm.get('cvc')?.errors && cardForm.get('cvc')?.touched"
+                             src="assets/images/form-success.svg" alt="error icon"
+                             class="status-icon">
+                    </div>
+                    <div *ngIf="cardForm.get('cvc')?.touched && cardForm.get('cvc')?.errors"
+                         class="text-red-500">
+                        <div class="pt-1">Please enter a valid security code</div>
+                    </div>
+                </label>
+
+                <button class="confirm-button" type="submit">Confirm</button>
+                <button *ngIf="modalType === ModalTypes.Edit" class="delete-button" (click)="onDeleteCard()" type="button">Delete card</button>
+                <div *ngIf="loading$ | async" class="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-gray-300 bg-opacity-50">
+                    <div class="animate-spin rounded-full h-20 w-20 border-t-2 border-b-2 border-gray-900"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

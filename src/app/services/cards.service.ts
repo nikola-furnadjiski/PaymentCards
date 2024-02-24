@@ -35,7 +35,7 @@ export class CardsService {
         return this.http.put(this.cardsUrl + card.id, card);
     }
 
-    deleteCard(id: number): Observable<any> {
+    deleteCard(id: string): Observable<any> {
         return this.http.delete(this.cardsUrl + id);
     }
 }

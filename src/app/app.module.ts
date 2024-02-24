@@ -6,18 +6,17 @@ import { AppComponent } from './app.component';
 import { DataService } from './services/data.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClientModule } from '@angular/common/http';
-import { EditCardComponent } from './components/edit-card/edit-card.component';
-import { AddCardComponent } from './components/add-card/add-card.component';
+import { CardModalComponent } from './components/card-modal/card-modal.component';
 import { CardComponent } from './components/card/card.component';
 import { CardListComponent } from './components/card-list/card-list.component';
 import { TabSplitPipe } from './pipes/tab-split.pipe';
 import { FormatDatePipe } from './pipes/format-date.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
         AppComponent,
-        EditCardComponent,
-        AddCardComponent,
+        CardModalComponent,
         CardComponent,
         CardListComponent,
         TabSplitPipe,
@@ -27,7 +26,8 @@ import { FormatDatePipe } from './pipes/format-date.pipe';
         BrowserModule,
         AppRoutingModule,
         HttpClientInMemoryWebApiModule.forRoot(DataService),
-        HttpClientModule
+        HttpClientModule,
+        ReactiveFormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]

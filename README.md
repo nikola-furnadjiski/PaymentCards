@@ -2,6 +2,8 @@
 
 Casumo allows players to register multiple payment methods to make deposits easier.
 
+The API authentication/authorization implementation is omitted as instructed on the e-mail!
+
 ---
 
 ## The Task

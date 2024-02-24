@@ -1,12 +1,8 @@
 @font-face {
-  font-family: 'circular-pro-woff2';
-  src: url('assets/fonts/lineto-circular-pro-book.woff2') format('woff2');
+  font-family: 'circular-pro';
+  src: url('~assets/fonts/lineto-circular-pro-book.ttf') format('ttf'),
+  url('~assets/fonts/lineto-circular-pro-book.woff') format('woff'),
+  url('~assets/fonts/lineto-circular-pro-book.woff2') format('woff2');
+
 }
-@font-face {
-  font-family: 'circular-pro-woff';
-  src: url('assets/fonts/lineto-circular-pro-book.woff') format('woff');
-}
-@font-face {
-  font-family: 'circular-pro-ttf';
-  src: url('assets/fonts/lineto-circular-pro-book.ttf') format('ttf');
-}
+
