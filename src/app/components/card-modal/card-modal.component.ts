@@ -107,7 +107,6 @@ export class CardModalComponent implements OnInit, OnDestroy {
     }
 
     onDeleteCard() {
-        debugger;
         this.loading$.next(true);
         this.cardsService.deleteCard(this.cardToEdit?.id ? this.cardToEdit?.id : '').pipe(
             finalize(() => this.loading$.next(false))
