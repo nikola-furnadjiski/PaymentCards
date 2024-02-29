@@ -1,3 +1,5 @@
+@import "src/styles/variables";
+
 .card-list-wrapper {
   display: flex;
   flex-direction: column;
@@ -6,38 +8,37 @@
   .top-section {
     display: flex;
     flex-direction: column;
-    align-items: start;
-    width: 400px;
-    margin-top: 50px;
+    width: $spacing-width;
+    margin-top: $spacing-xl;
 
     .title {
-      color: #4C00C2;
-      font-size: 32px;
-      font-weight: 700;
+      color: $purple-60;
+      font-size: $font-size-l;
+      font-weight: $font-weight-bold;
       margin: 0;
-      padding-bottom: 10px;
+      padding-bottom: $spacing-xs;
     }
 
     .text {
-      color: #798291;
-      font-size: 16px;
+      color: $grey-50;
+      font-size: $font-size-base;
       margin: 0;
-      padding-bottom: 70px;
+      padding-bottom: $spacing-3xl;
     }
   }
 
   .card-item {
-    padding-bottom: 20px;
+    padding-bottom: $spacing-base;
   }
 
   .add-card-button {
-    margin: 80px 0 50px 0;
-    background-color: #4C00C2;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: 700;
-    width: 400px;
-    padding: 15px;
-    border-radius: 30px;
+    margin: $spacing-4xl 0 $spacing-xl 0;
+    background-color: $purple-60;
+    color: $white;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    width: $spacing-width;
+    padding: $spacing-s;
+    border-radius: $border-radius-m;
   }
 }

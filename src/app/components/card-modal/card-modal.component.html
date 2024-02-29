@@ -9,8 +9,8 @@
         </div>
 
         <div class="title">
-            <ng-container *ngIf="modalType === ModalTypes.Add">Add your card details</ng-container>
-            <ng-container *ngIf="modalType === ModalTypes.Edit">Edit your card</ng-container>
+            <ng-container *ngIf="modalType === ModalTypes.Add">{{ 'ADD_CARD_DETAILS' | translate }}</ng-container>
+            <ng-container *ngIf="modalType === ModalTypes.Edit">{{ 'EDIT_YOUR_CARD' | translate }}</ng-container>
         </div>
 
         <div *ngIf="modalType === ModalTypes.Edit" class="card-wrapper">
@@ -20,7 +20,7 @@
         <form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
             <div class="grid grid-cols-1 gap-6">
                 <label for="nameOnCard" class="block">
-                    <span class="text-black font-bold">Name in card</span>
+                    <span class="text-black font-bold">{{ 'NAME_IN_CARD' | translate }}</span>
                     <div class="relative">
                         <input id="nameOnCard"
                                type="text"
@@ -39,11 +39,11 @@
                     </div>
                     <div *ngIf="cardForm.get('nameOnCard')?.touched && cardForm.get('nameOnCard')?.errors"
                          class="text-red-500">
-                        <div class="pt-1">Please fill in your name</div>
+                        <div class="pt-1">{{ 'ERRORS.NAME' | translate }}</div>
                     </div>
                 </label>
                 <label for="cardNumber" class="block">
-                    <span class="text-black font-bold">Card number</span>
+                    <span class="text-black font-bold">{{ 'CARD_NUMBER' | translate }}</span>
                     <div class="relative">
                         <input id="cardNumber"
                                type="text"
@@ -63,12 +63,12 @@
                     </div>
                     <div *ngIf="cardForm.get('cardNumber')?.touched && cardForm.get('cardNumber')?.errors"
                          class="text-red-500">
-                        <div class="pt-1">Please enter a valid credit card number</div>
+                        <div class="pt-1">{{ 'ERRORS.CARD_NUMBER' | translate }}</div>
                     </div>
                 </label>
 
                 <label for="expiryDate" class="block">
-                    <span class="text-black font-bold">Expiry date</span>
+                    <span class="text-black font-bold">{{ 'EXPIRY_DATE' | translate }}</span>
                     <div class="relative">
                     <input id="expiryDate"
                             type="text"
@@ -88,11 +88,11 @@
                     </div>
                     <div *ngIf="cardForm.get('expiryDate')?.touched && cardForm.get('expiryDate')?.errors"
                          class="text-red-500">
-                        <div class="pt-1">Please enter a valid expiry date</div>
+                        <div class="pt-1">{{ 'ERRORS.EXPIRY_DATE' | translate }}</div>
                     </div>
                 </label>
                 <label for="cvc" class="block">
-                    <span class="text-black">CVC (Security code)</span>
+                    <span class="text-black">{{ 'CVC_SECURITY_CODE' | translate }}</span>
                     <div class="relative">
                     <input id="cvc"
                            type="text"
@@ -112,12 +112,12 @@
                     </div>
                     <div *ngIf="cardForm.get('cvc')?.touched && cardForm.get('cvc')?.errors"
                          class="text-red-500">
-                        <div class="pt-1">Please enter a valid security code</div>
+                        <div class="pt-1">{{ 'ERRORS.CVC_SECURITY_CODE' | translate }}</div>
                     </div>
                 </label>
 
-                <button class="confirm-button" type="submit">Confirm</button>
-                <button *ngIf="modalType === ModalTypes.Edit" class="delete-button" (click)="onDeleteCard()" type="button">Delete card</button>
+                <button class="confirm-button" type="submit">{{ 'CONFIRM' | translate }}</button>
+                <button *ngIf="modalType === ModalTypes.Edit" class="delete-button" (click)="onDeleteCard()" type="button">{{ 'DELETE_CARD' | translate }}</button>
                 <div *ngIf="loading$ | async" class="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-gray-300 bg-opacity-50">
                     <div class="animate-spin rounded-full h-20 w-20 border-t-2 border-b-2 border-gray-900"></div>
                 </div>

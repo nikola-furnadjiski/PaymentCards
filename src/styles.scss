@@ -1,17 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-@import "src/styles/border-radiuses";
-@import "src/styles/colors";
-@import "src/styles/font-sizes";
-@import "src/styles/spacings";
 @import "src/styles/fonts";
+@import "src/styles/variables";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-  //* {
-  //  font-family: 'circular-pro', sans-serif;
-  //}
 
 
 

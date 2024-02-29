@@ -11,7 +11,7 @@
                         <div class="cvc bold small"
                              [class.color-visa]="card.type === CardTypes.Visa"
                              [class.color-mc]="card.type === CardTypes.Mastercard">
-                            CVC
+                            {{ 'CVC' | translate }}
                         </div>
                         <div class="white medium">{{ card.cvc }}</div>
                     </div>
@@ -19,7 +19,7 @@
                         <div class="bold small"
                              [class.color-visa]="card.type === CardTypes.Visa"
                              [class.color-mc]="card.type === CardTypes.Mastercard">
-                            EXPIRES
+                            {{ 'EXPIRES' | translate }}
                         </div>
                         <div class="white medium">{{ card.expires | formatDate }}</div>
                     </div>

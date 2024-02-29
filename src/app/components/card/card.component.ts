@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Card } from '../../models/card.model';
 import { CardsService } from '../../services/cards.service';
 import { CardTypes } from '../../enums/card-types.enum';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-card',
@@ -19,7 +20,7 @@ export class CardComponent implements OnInit {
   imageUrl: string;
   altText: string;
 
-  constructor(private cardsService: CardsService) {
+  constructor(private cardsService: CardsService, private translateService: TranslateService) {
   }
 
   ngOnInit(): void {

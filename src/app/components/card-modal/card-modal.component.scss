@@ -1,41 +1,43 @@
+@import "src/styles/variables";
+
 .close-button {
   position: relative;
-  left: 396px;
-  bottom: 20px;
+  left: $spacing-5xl;
+  bottom: $spacing-xxs;
   cursor: pointer;
 }
 
 .title {
-  font-size: 24px;
-  font-weight: 900;
-  margin-bottom: 50px;
+  font-size: $font-size-m;
+  font-weight: $font-weight-bolder;
+  margin-bottom: $spacing-xl;
 }
 
 .card-wrapper {
   position: relative;
-  margin-bottom: 30px;
+  margin-bottom: $spacing-m;
 }
 
 .status-icon {
   position: absolute;
-  top: 15px;
-  left: 380px;
+  top: $spacing-s;
+  left: $spacing-5xl;
 }
 
 .confirm-button {
-  margin: 30px 0 0 0;
-  background-color: #4C00C2;
-  color: #FFFFFF;
-  font-size: 16px;
-  font-weight: 700;
-  width: 400px;
-  padding: 15px;
-  border-radius: 30px;
+  margin: $spacing-m 0 0 0;
+  background-color: $purple-60;
+  color: $white;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  width: $spacing-width;
+  padding: $spacing-s;
+  border-radius: $border-radius-m;
 }
 
 .delete-button {
-  margin: 0 0 30px 0;
-  color: #D3D8E1;
-  font-size: 16px;
-  font-weight: bold;
+  margin: 0 0 $spacing-m 0;
+  color: $grey-20;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
 }

@@ -1,31 +1,32 @@
+@import "src/styles/variables";
 
 .card-wrapper {
-  width: 400px;
-  height: 240px;
-  border-radius: 16px;
+  width: $spacing-width;
+  height: $spacing-height;
+  border-radius: $border-radius-s;
   background: url('~src/assets/images/card-background-shape.svg');
   background-size: cover;
 
   .overlay {
     position: relative;
-    border-radius: 16px;
+    border-radius: $border-radius-s;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
 
     &.background-mc {
-      background: rgba(59, 5, 142, 0.95);
+      background: $mastercard_color;
     }
 
     &.background-visa {
-      background: rgba(4, 201, 199, 0.95);
+      background: $visa_color;
     }
   }
 }
 
 .card {
-  padding: 34px 24px;
+  padding: $spacing-m $spacing-base;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -37,7 +38,7 @@
     align-items: flex-start;
 
     .logo-image {
-      width: 80px;
+      width: $spacing-4xl;
     }
 
     &__right {
@@ -45,14 +46,14 @@
       align-items: baseline;
 
       .cvc {
-        padding-right: 24px;
+        padding-right: $spacing-base;
       }
     }
   }
 
   .bottom-row {
     .name {
-      padding-bottom: 20px;
+      padding-bottom: $spacing-s;
     }
 
     &__right {
@@ -64,9 +65,9 @@
       }
 
       .edit-image {
-        width: 24px;
+        width: $spacing-base;
         mask: url('~src/assets/images/edit-icon.svg') no-repeat center;
-        background-color: #ffffff;
+        background-color: $white;
         cursor: pointer;
       }
     }
@@ -74,28 +75,28 @@
 }
 
 .color-visa {
-  color: #444E5D;
+  color: $grey-70;
 }
 
 .color-mc {
-  color: #D3D8E1;
+  color: $grey-20;
 }
 
 .bold {
-  font-weight: 600;
+  font-weight: $font-weight-bold;
 }
 
 .white {
-  color: #ffffff;
+  color: $white;
 }
 
 .small {
-  font-size: 14px;
+  font-size: $font-size-s;
 }
 
 .medium {
-  font-size: 20px;
-  font-weight: 600;
-  padding-top:5px;
+  font-size: $font-size-basem;
+  font-weight: $font-weight-bold;
+  padding-top: $spacing-xxs;
 }
 

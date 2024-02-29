@@ -1,0 +1,21 @@
+{
+  "CVC": "CVC",
+  "EXPIRES": "EXPIRES",
+  "TITLE": "Your cards",
+  "DESCRIPTION": "Add, edit or delete your cards any time",
+  "ADD_NEW_CARD": "Add new card",
+  "ADD_CARD_DETAILS": "Add your card details",
+  "EDIT_YOUR_CARD": "Edit your card",
+  "NAME_IN_CARD": "Name in card",
+  "CARD_NUMBER": "Card number",
+  "EXPIRY_DATE": "Expiry date",
+  "CVC_SECURITY_CODE": "CVC (Security code)",
+  "CONFIRM": "Confirm",
+  "DELETE_CARD": "Delete card",
+  "ERRORS": {
+    "NAME": "Please fill in your name",
+    "CARD_NUMBER": "Please enter a valid credit card number",
+    "EXPIRY_DATE": "Please enter a valid expiry date",
+    "CVC_SECURITY_CODE": "Please enter a valid security code"
+  }
+}

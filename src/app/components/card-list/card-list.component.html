@@ -1,14 +1,14 @@
 <div class="card-list-wrapper">
     <div class="top-section">
-        <h1 class="title">Your cards</h1>
-        <p class="text">Add, edit or delete your cards any time</p>
+        <h1 class="title">{{ 'TITLE' | translate }}</h1>
+        <p class="text">{{ 'DESCRIPTION' | translate }}</p>
     </div>
 
     <div *ngFor="let card of cards" class="card-item">
         <app-card [card]="card" (editCard)="onEditCard($event)"></app-card>
     </div>
 
-    <button class="add-card-button" (click)="onAddCard()">Add new card</button>
+    <button class="add-card-button" (click)="onAddCard()">{{ 'ADD_NEW_CARD' | translate }}</button>
     <app-card-modal *ngIf="isModalOpen" [cardToEdit]="cardToEdit" [modalType]="modalType" (shouldFetchCards)="getCards()" (shouldCloseModal)="onCloseModal()"></app-card-modal>
     <div *ngIf="loading$ | async" class="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-gray-300 bg-opacity-50">
         <div class="animate-spin rounded-full h-20 w-20 border-t-2 border-b-2 border-gray-900"></div>
